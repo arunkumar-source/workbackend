@@ -1,5 +1,6 @@
 import { Hono } from "hono"
 import { cors } from "hono/cors"
+import { handle } from "hono/vercel";
 
 const app = new Hono()
 app.options('*', (c) => {
@@ -12,7 +13,7 @@ let works: Array<{
   id: string
   title: string
   status: string
-  createdAt: string
+  createdAt: string 
 }> = []
 
 app.use('*', cors({
@@ -55,4 +56,4 @@ app.delete("/delete/:id", (c) => {
   return c.body(null, 204)
 })
 
-export default app
+export default handle(app)
