@@ -3,7 +3,7 @@ import { cors } from "hono/cors"
 
 const app = new Hono()
 app.options('*', (c) => {
-  return c.text('', 204)
+  return c.body(null, 204)
 })
 
 
