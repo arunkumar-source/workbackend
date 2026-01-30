@@ -18,12 +18,12 @@ const app = new Hono()
 app.use("*", cors())
 
 /* -------- GET ALL WORKS -------- */
-app.get("/", (c) => {
+app.get("/get", (c) => {
   return c.json(works)
 })
 
 /* -------- ADD WORK -------- */
-app.post("/", async (c) => {
+app.post("/add", async (c) => {
   const { title, status } = await c.req.json()
 
   if (!title || !status) {
@@ -42,7 +42,7 @@ app.post("/", async (c) => {
 })
 
 /* -------- UPDATE WORK -------- */
-app.patch("/:id", async (c) => {
+app.patch("/update/:id", async (c) => {
   const id = c.req.param("id")
   const updates = await c.req.json()
 
@@ -54,7 +54,7 @@ app.patch("/:id", async (c) => {
 })
 
 /* -------- DELETE WORK -------- */
-app.delete("/:id", (c) => {
+app.delete("/delete/:id", (c) => {
   const id = c.req.param("id")
   works = works.filter((w) => w.id !== id)
   return c.body(null, 204)
