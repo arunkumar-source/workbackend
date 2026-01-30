@@ -76,7 +76,7 @@ app.patch("/update/:id", async (c) => {
 })
 
 /* -------- DELETE WORK -------- */
-app.delete("delete/:id", (c) => {
+app.delete("/delete/:id", (c) => {
   const id = c.req.param("id")
   works = works.filter((w) => w.id !== id)
   return c.body(null, 204)
