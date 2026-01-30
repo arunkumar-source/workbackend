@@ -32,8 +32,8 @@ let works: Work[] = [{
 
 const app = new Hono()
 
-app.use(cors({
-  origin:["/*"],
+app.use("*",cors({
+  origin:["*"],
   allowMethods:["GET", "POST", "PUT", "DELETE"],
   allowHeaders: ['Content-Type'],
   credentials: true,
