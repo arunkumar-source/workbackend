@@ -19,7 +19,7 @@ app.options('*', (c) => {
 let works: Work[] = []
 
 app.use('*', cors({
-  origin: ['http://localhost:5173','https://work-project-jpakgco38-arun-kumars-projects-67b3a0ee.vercel.app/'], 
+  origin: ['*'], 
   allowMethods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowHeaders: ['Content-Type'],
 }))
