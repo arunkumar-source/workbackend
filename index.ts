@@ -1,1 +1,3 @@
-export { default } from './api/works'
+import app from './api/works'
+
+export default app
