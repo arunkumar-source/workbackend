@@ -2,6 +2,10 @@ import { Hono } from "hono"
 import { cors } from "hono/cors"
 
 const app = new Hono()
+app.options('*', (c) => {
+  return c.text('', 204)
+})
+
 
 // Initialize works array to store work items
 let works: Array<{
