@@ -2,6 +2,13 @@ import { Hono } from "hono"
 import { cors } from "hono/cors"
 import { handle } from "hono/vercel";
 
+interface Work {
+  id: string;
+  title: string;
+  status: string;
+  createdAt: string;
+}
+
 const app = new Hono()
 app.options('*', (c) => {
   return c.body(null, 204)
@@ -9,15 +16,10 @@ app.options('*', (c) => {
 
 
 // Initialize works array to store work items
-let works: Array<{
-  id: string
-  title: string
-  status: string
-  createdAt: string 
-}> = []
+let works: Work[] = []
 
 app.use('*', cors({
-  origin: 'http://localhost:5173', // or '*'
+  origin: 'http://localhost:5173', 
   allowMethods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowHeaders: ['Content-Type'],
 }))
