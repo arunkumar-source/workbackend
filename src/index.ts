@@ -11,7 +11,24 @@ export type Work = {
 }
 
 /* ------------ SERVER MEMORY ------------ */
-let works: Work[] = []
+let works: Work[] = [{
+  "id": "1",
+  "title": "Setup project structure",
+  "status": "done",
+  "createdAt": "2026-01-30T..."
+},
+{
+  "id": "2",
+  "title": "Create API endpoints",
+  "status": "inprogress",
+  "createdAt": "2026-01-30T..."
+},
+{
+  "id": "3",
+  "title": "Add frontend interface",
+  "status": "todo",
+  "createdAt": "2026-01-30T..."
+}]
 
 const app = new Hono()
 
@@ -54,7 +71,7 @@ app.patch("/update/:id", async (c) => {
 })
 
 /* -------- DELETE WORK -------- */
-app.delete("/delete/:id", (c) => {
+app.delete("delete/:id", (c) => {
   const id = c.req.param("id")
   works = works.filter((w) => w.id !== id)
   return c.body(null, 204)
