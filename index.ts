@@ -1,1 +1,1 @@
-export { default } from './api/works.js'
+export { default } from './api/works'
