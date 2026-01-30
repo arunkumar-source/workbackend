@@ -35,7 +35,7 @@ const app = new Hono()
 app.use("*", cors())
 
 /* -------- GET ALL WORKS -------- */
-app.get("/get", (c) => {
+app.get("/", (c) => {
   return c.json(works)
 })
 
