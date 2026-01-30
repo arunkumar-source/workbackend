@@ -11,26 +11,7 @@ export type Work = {
 }
 
 /* ------------ SERVER MEMORY ------------ */
-let works: Work[] = [
-  {
-    id: "1",
-    title: "Setup project structure",
-    status: "done",
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "2", 
-    title: "Create API endpoints",
-    status: "inprogress",
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: "3",
-    title: "Add frontend interface",
-    status: "todo", 
-    createdAt: new Date().toISOString(),
-  }
-]
+let works: Work[] = []
 
 const app = new Hono()
 
