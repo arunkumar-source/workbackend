@@ -11,6 +11,6 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["api/**/*", "index.ts", "index.ts"],
+  "include": ["api/**/*", "src/index.ts", "src/index.ts"],
   "exclude": ["node_modules", "dist"]
 }
