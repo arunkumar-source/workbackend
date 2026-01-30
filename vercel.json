@@ -1,7 +1,8 @@
 {
+  "buildCommand": "pnpm build",
   "functions": {
     "api/works.ts": {
-      "runtime": "nodejs18.x",
+      "runtime": "nodejs20.x",
       "maxDuration": 10
     }
   }
