@@ -14,7 +14,7 @@ interface Work {
 let works: Work[] = []
 
 app.use('*', cors({
-  origin: ['*','https://work-project-gamma.vercel.app/','https://work-project-gamma.vercel.app'], 
+  origin: ['*','http://localhost:5173','https://work-project-gamma.vercel.app/','https://work-project-gamma.vercel.app'], 
   allowMethods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowHeaders: ['Content-Type'],
 }))
